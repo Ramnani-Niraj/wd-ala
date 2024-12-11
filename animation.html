@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Javascript Animation</title>
+  <style>
+     body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+   }
+  
+   .wire {
+    width: 2px;
+    height: 150px;
+    background-color: #333;
+    margin: 0 auto;
+   }
+  
+   .bulb {
+    width: 50px;
+    height: 50px;
+    background-color: #444;
+    border-radius: 50%;
+    margin-top: -5px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, box-shadow 0.3s;
+   }
+  
+   .bulb.on {
+    background-color: #ffeb3b;
+    box-shadow: 0 0 20px #ffeb3b;
+   }
+  
+   .buttons {
+    margin-top: 20px;
+   }
+  
+   .btn {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+   }
+  
+   #onButton {
+    background-color: #4caf50;
+    color: white;
+   }
+  
+   #onButton:hover {
+    background-color: #45a049;
+   }
+  
+   #offButton {
+    background-color: #f44336;
+    color: white;
+   }
+  
+   #offButton:hover {
+    background-color: #e53935;
+   }
+  </style>
+</head>
+<body>
+  <div class="wire"></div>
+  <div class="bulb" id="bulb"></div>
+  <div class="buttons">
+    <button id="onButton" class="btn">Turn On</button>
+    <button id="offButton" class="btn">Turn Off</button>
+  </div>
+  <script>
+    const bulb = document.getElementById('bulb');
+const onButton = document.getElementById('onButton');
+const offButton = document.getElementById('offButton');
+
+onButton.addEventListener('click', () => {
+  bulb.classList.add('on');
+});
+
+offButton.addEventListener('click', () => {
+  bulb.classList.remove('on');
+});
+  </script>
+</body>
+</html>
